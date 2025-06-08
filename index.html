@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Koala T-Shirt</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>Koala T-Shirt</h1>
+        <p>Comfortable, eco-friendly t-shirts inspired by nature</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#products-section">Products</a>
+        <a href="#feedback-section">Feedback</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
+
+    <main>
+        <section id="home-section">
+            <h2>Welcome to Koala T-Shirt</h2>
+            <p>At Koala T-Shirt, we create sustainable and stylish apparel that brings you closer to nature. Our soft
+                cotton tees feature unique koala designs, perfect for everyday comfort and eco-conscious living.</p>
+        </section>
+
+        <section id="products-section">
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="images/image1.jpg" alt="Koala Classic Tee" />
+                    <h3>Koala Classic Tee</h3>
+                    <p>Soft, breathable cotton with a minimalist koala print.</p>
+                    <button onclick="addToCart('Koala Classic Tee')">Add to Cart</button>
+                    <a class="product-link" href="product-details.html?product=classic">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="images/image2.jpg" alt="Koala Eco Tee" />
+                    <h3>Koala Eco Tee</h3>
+                    <p>Made from organic cotton with a vibrant koala design.</p>
+                    <button onclick="addToCart('Koala Eco Tee')">Add to Cart</button>
+                    <a class="product-link" href="product-details.html?product=eco">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback-section">
+            <h2>Customer Feedback</h2>
+            <p>We value your input! Please share your thoughts on our products and ideas.</p>
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="comments">Comments or Suggestions</label>
+                <textarea id="comments" name="comments" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <p class="message" id="feedbackMessage"></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Koala T-Shirt. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
