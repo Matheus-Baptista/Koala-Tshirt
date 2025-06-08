@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Details - Koala T-Shirt</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>Koala T-Shirt</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
+
+    <main>
+        <section id="product-details">
+            <h2 id="product-title">Loading...</h2>
+            <img id="product-image" src="" alt="Product image" style="max-width:300px; border-radius: 8px;" />
+            <p id="product-description"></p>
+            <button id="addCartBtn">Add to Cart</button>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Koala T-Shirt. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const productData = {
+            classic: {
+                title: "Koala Classic Tee",
+                image: "images/image1.jpg",
+                description: "Soft, breathable cotton with a minimalist koala print. Perfect for everyday wear."
+            },
+            eco: {
+                title: "Koala Eco Tee",
+                image: "images/image2.jpg",
+                description: "Made from 100% organic cotton with a vibrant design. Eco-friendly and stylish."
+            }
+        };
+
+        const productKey = getQueryParam('product');
+        const product = productData[productKey];
+
+        if (product) {
+            document.getElementById('product-title').textContent = product.title;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-image').alt = product.title;
+            document.getElementById('product-description').textContent = product.description;
+        } else {
+            document.getElementById('product-title').textContent = "Product not found";
+            document.getElementById('product-description').textContent = "";
+            document.getElementById('addCartBtn').style.display = 'none';
+        }
+
+        document.getElementById('addCartBtn').addEventListener('click', function () {
+            if (product) {
+                alert(product.title + ' has been added to your cart!');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
